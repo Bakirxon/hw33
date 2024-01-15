@@ -1,6 +1,7 @@
 package repository;
 
 import entity.Student;
+import util.Input;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -56,7 +57,10 @@ public class StudentRepo implements Repository<Student> {
 
     @Override
     public void update(Student student) {
-
+        if (student != null) {
+            student.setName(Input.str("Enter name: "));
+        }
+        uploadData();
     }
 
     @Override
